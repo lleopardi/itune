@@ -1,0 +1,41 @@
+.card-podcast {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 1px 0px 5px var(--primary);
+    padding: 10px;
+    gap: 5px;
+
+    &__title{
+        color: black;
+        font-size: 1rem;
+    }
+
+    &__image-container {
+        height: 40px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__image {
+        border-radius: 50%;
+        position: absolute;
+        top: -50px;
+        width: 100px;
+        height: 100px;
+    }
+
+    &__author {
+        color: gray;
+        font-size: 0.8rem;
+    }
+
+    &__title {
+        font-size: 0.8rem;
+    }
+}
