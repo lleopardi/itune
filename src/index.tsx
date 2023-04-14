@@ -13,6 +13,7 @@ import Home from "./views/Home";
 import { createRoot } from "react-dom/client";
 import Podcast from "./views/Podcast";
 import getEpisodesByPodcastId from "./services/episodes.service";
+import Episode from "./views/Episode";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +23,10 @@ const router = createBrowserRouter(
         path="podcast/:id"
         element={<Podcast />}
         loader={getEpisodesByPodcastId}
+      ></Route>
+      <Route
+        path="podcast/:id/episode/:episodeId"
+        element={<Episode />}
       ></Route>
     </Route>
   )
