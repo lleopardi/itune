@@ -7,14 +7,17 @@ describe("Http", () => {
 
   describe("GET", () => {
     test("should return data if the request is successful", async () => {
-      const expectedData = "some test data";
+      const mockData = {
+        contents: "{\"a\": \"Some content\"}"
+      };
+      const expectedData = {"a": "Some content"};
 
       global.fetch = jest.fn().mockResolvedValueOnce({
         ok: true,
-        json: () => Promise.resolve(expectedData),
+        json: () => Promise.resolve(mockData),
       });
 
-      const result = await Http.get<string>("https://example.com/api/data");
+      const result = await Http.get("https://example.com/api/data");
 
       expect(result).toEqual(expectedData);
     });

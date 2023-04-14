@@ -8,7 +8,6 @@ export class Http {
         error.name = response.type;
         throw error;
       }
-      debugger
       const data: {contents: string} = await response.json();
       const dataParsed: Type = JSON.parse(data.contents)
 
